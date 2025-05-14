@@ -36,6 +36,6 @@ jobs:
       # Connect to the server. In a production environment other options are preferred over using -o StrickHostKeyChecking=no
       - name: Connect with SSH
         run: |
-          ssh -o StrickHostKeyChecking=no root@${{ secrets.SERVER_IP }}
+          ssh -o StrictHostKeyChecking=no root@${{ secrets.SERVER_IP }}
           echo "Hello pipeline"
           
