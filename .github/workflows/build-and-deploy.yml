@@ -1,0 +1,41 @@
+#To test the pipeline locally it is recommneded to install: https://github.com/nektos/act
+name: Pipeline for CI/CD
+on:
+  push:
+    branches:
+      - [main]
+  pull_request:
+    branches:
+      - [main]
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Get the code from the repository
+      - name: Get repository code
+        uses: actions/checkout@v4
+
+      # If docker compose is already installed in the runner (UNCOMMENT LATER)
+      # - name: Set up Docker Compose
+      #   uses: docker/setup-compose-action@v1.2.0
+      #   with:
+      #     version: latest
+
+      # Build the Docker image (PENDING)
+
+      # Docker push image to Docker Hub (PENDING)
+
+      # Set SSH key to access the server
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # Connect to the server. In a production environment other options are preferred over using -o StrickHostKeyChecking=no
+      - name: Connect with SSH
+        run: |
+          ssh -o StrickHostKeyChecking=no root@${{ secrets.SERVER_IP }}
+          echo "Hello pipeline"
+          

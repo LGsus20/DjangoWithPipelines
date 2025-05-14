@@ -120,6 +120,10 @@ ipython_config.py
 # Ignore PyCharm/JetBrains IDE project files
 .idea/
 
+# Ignore SSL certificates 
+*.cert.pem
+*.key.pem
+
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
 
