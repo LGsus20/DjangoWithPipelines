@@ -40,8 +40,7 @@ jobs:
       - name: SSH into server, prepare deployment directory and clone repository
         run: |
           ssh -o StrictHostKeyChecking=no root@${{ secrets.SERVER_IP }} " \
-            mkdir -p ${{ env.DEPLOY_PATH }} && \
-            rm -rf ${{ env.DEPLOY_PATH }}/{*,.*} 2>/dev/null && \
+            rm -rf ${{ env.DEPLOY_PATH }} && \
             git clone https://github.com/LGsus20/DjangoWithPipelines.git ${{ env.DEPLOY_PATH }} \
           "
 
