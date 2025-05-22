@@ -13,7 +13,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./backend:/app
+      - ./backend:/app  # TO DO: Remove from Prod docker-compose file
     env_file: .env
     depends_on:
       - db
