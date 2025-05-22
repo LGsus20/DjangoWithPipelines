@@ -9,7 +9,7 @@ services:
 
   web:
     build: .
-    command: ["gunicorn", "crud_project.wsgi:application", "--bind", "0.0.0.0:8000"] 
+    command: ["gunicorn", "crud_project.wsgi:application", "--bind", "0.0.0.0:8000"] # Brackets are definitely needed
     ports:
       - "8000:8000"
     volumes:
