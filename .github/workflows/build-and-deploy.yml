@@ -39,10 +39,11 @@ jobs:
       # Connect to the server. In a production environment other options are preferred over using -o StrickHostKeyChecking=no
       - name: SSH into server, prepare deployment directory and clone repository
         run: |
-          ssh -o StrictHostKeyChecking=no root@${{ secrets.SERVER_IP }}
-          mkdir -p ${{ env.DEPLOY_PATH }}     
-          rm -rf ${{ env.DEPLOY_PATH }}/{*,.*} 2>/dev/null
-          git clone https://github.com/LGsus20/DjangoWithPipelines.git ${{ env.DEPLOY_PATH }}
+          ssh -o StrictHostKeyChecking=no root@${{ secrets.SERVER_IP }} " \
+            mkdir -p ${{ env.DEPLOY_PATH }} && \
+            rm -rf ${{ env.DEPLOY_PATH }}/{*,.*} 2>/dev/null && \
+            git clone https://github.com/LGsus20/DjangoWithPipelines.git ${{ env.DEPLOY_PATH }} \
+          "
 
       # ENV file to runner
       - name: Create .env file
