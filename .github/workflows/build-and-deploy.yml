@@ -14,22 +14,12 @@ on:
       - main
 
 jobs: 
-  build:
+  pipeline:
     runs-on: ubuntu-latest
     env:
       DEPLOY_PATH: /root/webapp # Location on server to deploy app
 
     steps:
-      # If docker compose is already installed in the runner (UNCOMMENT LATER)
-      # - name: Set up Docker Compose
-      #   uses: docker/setup-compose-action@v1.2.0
-      #   with:
-      #     version: latest
-
-      # Build the Docker image (PENDING)
-
-      # Docker push image to Docker Hub (PENDING)
-
       # Set SSH key to access the server
       - name: Setup SSH key
         uses: webfactory/ssh-agent@v0.9.0
