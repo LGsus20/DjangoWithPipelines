@@ -29,6 +29,9 @@ DEBUG = bool(os.environ.get("DEBUG", default=0))
 MY_DOMAIN = os.getenv('DOMAIN_NAME')
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "[::1]", MY_DOMAIN]
 
+# CSRF trusted origins. At least for now only for my domain
+CSRF_TRUSTED_ORIGINS = [f'https://{MY_DOMAIN}', f'http://{MY_DOMAIN}']
+
 
 # Application definition
 
