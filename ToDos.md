@@ -5,3 +5,5 @@
 - Ensure that only the NGINX container is accessible from outside the container network.
 ## 2. Obfuscate domain name 
 - Remove the domain name in default.prod.config
+## 3. Separate .env
+- Have 1 .env for each docker compose
