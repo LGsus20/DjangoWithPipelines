@@ -1,5 +1,4 @@
 # Django With Pipelines
-
 This project demonstrates the use of Django with a CI/CD pipeline setup. Follow the instructions below to get started.
 
 ## Prerequisites
