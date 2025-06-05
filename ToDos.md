@@ -7,3 +7,5 @@
 - Remove the domain name in default.prod.config
 ## 3. Separate .env
 - Have 1 .env for each docker compose
+## 4. Move hardcoded names
+- Move names like 'Users' to variables

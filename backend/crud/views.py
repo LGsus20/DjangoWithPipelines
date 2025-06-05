@@ -22,5 +22,12 @@ def create_user(request):
             User.objects.create(username=username, 
                                 email=email,
                                 password=password)
-            return redirect("/")
+            return redirect("Users")
     return render(request, "create_user.html")
+
+def delete_user(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+    if request.method == "POST":
+        user.delete()
+        return redirect("Users")
+    return render(request, "delete_confirmation.html", {"user": user})
