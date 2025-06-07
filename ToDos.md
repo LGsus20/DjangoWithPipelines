@@ -9,3 +9,5 @@
 - Have 1 .env for each docker compose
 ## 4. Move hardcoded names
 - Move names like 'Users' to variables
+## 5. Remove NGINX pages
+- Remove NGINX pages, to prevent displaying NGINX info
